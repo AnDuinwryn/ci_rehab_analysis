@@ -4,7 +4,12 @@ This project contains a full data analysis pipeline for the CI Rehab voice cloni
 
 ## Overview
 
-The analysis is implemented in `analysis.ipynb` and follows five stages:
+The project includes two notebooks:
+
+- `analysis.ipynb`: core five-stage pipeline
+- `extended_analysis.ipynb`: grouped analyses by institution, familiarity, demographics, topic, AI familiarity, auditory sensitivity, and recording equipment
+
+The core pipeline in `analysis.ipynb` follows five stages:
 
 1. Data ingestion and validation
 2. Feature engineering
@@ -15,10 +20,6 @@ The analysis is implemented in `analysis.ipynb` and follows five stages:
 ## Data Layout
 
 The notebook expects a `Data/` directory in the project root.
-
-In this workspace, `Data/` is a symlink to:
-
-- `/Users/aotesaiwen/Datasets/CI_rehab_results`
 
 Expected files per participant (`P026` to `P050`):
 
@@ -51,7 +52,7 @@ Then open `analysis.ipynb` and run all cells from top to bottom.
 
 ## Outputs
 
-The notebook exports summary tables to a timestamped run directory:
+`analysis.ipynb` exports summary tables to a timestamped run directory:
 
 - `outputs/runs/<YYYYMMDD_HHMMSS>/`
 
@@ -69,10 +70,16 @@ Each run contains:
 For convenience, `outputs/latest` is also updated to point to the latest run
 (as a symlink when supported, otherwise as a copied directory).
 
+`extended_analysis.ipynb` exports to:
+
+- `outputs/runs/extended_<YYYYMMDD_HHMMSS>/`
+
+For convenience, `outputs/latest_extended` is updated to the latest extended run.
+
 ## Quick Run Checklist
 
 1. Ensure `Data/` is available and points to the dataset directory.
 2. Run `uv sync`.
 3. Run `uv run jupyter notebook`.
-4. Execute all cells in `analysis.ipynb`.
-5. Check `outputs/latest` (or `outputs/runs/<timestamp>/`) for result tables.
+4. Execute all cells in `analysis.ipynb` and/or `extended_analysis.ipynb`.
+5. Check `outputs/latest` or `outputs/latest_extended` for result tables.
