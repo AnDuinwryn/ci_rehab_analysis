@@ -1,0 +1,18 @@
+[project]
+name = "ci-rehab-analysis"
+version = "0.1.0"
+description = "CI Rehab voice cloning discrimination analysis pipeline"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas",
+    "numpy",
+    "scipy",
+    "statsmodels",
+    "matplotlib",
+    "seaborn",
+    "jupyter",
+]
+
+[tool.uv]
+package = false
+
