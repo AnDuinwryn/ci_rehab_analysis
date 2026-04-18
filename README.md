@@ -21,7 +21,7 @@ The core pipeline in `analysis.ipynb` follows five stages:
 
 The notebook expects a `Data/` directory in the project root.
 
-Expected files per participant (`P026` to `P050`):
+Expected files per participant (`P001` to `P050`, 50 participants total):
 
 - `AI_VoiceTask_<PID>_results.csv`
 - `AI_VoiceTask_<PID>_survey.json`
